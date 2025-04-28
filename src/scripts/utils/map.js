@@ -1,4 +1,4 @@
-import { map, tileLayer, Icon, icon, marker, popup } from 'leaflet';
+import { map, tileLayer, Icon, icon, marker, popup, latLng } from 'leaflet';
 import markerIcon from 'leaflet/dist/images/marker-icon.png';
 import markerIcon2x from 'leaflet/dist/images/marker-icon-2x.png';
 import markerShadow from 'leaflet/dist/images/marker-shadow.png';
@@ -23,7 +23,7 @@ export default class Map {
       return `${latitude}, ${longitude}`;
     }
   }
-  
+
   static isGeolocationAvailable() {
     return 'geolocation' in navigator;
   }
@@ -133,5 +133,16 @@ export default class Map {
     this.#map.setView(latLng(coordinate), zoomLevel);
   }
 
+  getCenter() {
+    const { lat, lng } = this.#map.getCenter();
+    return {
+      latitude: lat,
+      longitude: lng,
+    };
+  }
+  
+  addMapEventListener(eventName, callback) {
+    this.#map.addEventListener(eventName, callback);
+  }
 
 }

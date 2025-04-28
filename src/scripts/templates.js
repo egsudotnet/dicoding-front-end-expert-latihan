@@ -210,6 +210,8 @@ export function generateReportDetailTemplate({
       <div class="report-detail__more-info">
         <div class="report-detail__more-info__inline">
           <div id="createdat" class="report-detail__createdat" data-value="${createdAtFormatted}"><i class="fas fa-calendar-alt"></i></div>
+          <div id="location-place-name" class="report-detail__location__place-name" data-value="${location.placeName}"><i class="fas fa-map"></i></div>
+    
         </div>
         <div class="report-detail__more-info__inline">
           <div id="location-latitude" class="report-detail__location__latitude" data-value="${location.latitude}">Latitude:</div>

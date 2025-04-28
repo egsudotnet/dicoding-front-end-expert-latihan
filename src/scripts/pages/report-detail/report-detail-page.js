@@ -137,9 +137,6 @@ export default class ReportDetailPage {
       generateCommentsListErrorTemplate(message);
   }
 
-  async initialMap() {
-    // TODO: map initialization
-  }
 
   #setupForm() {
     this.#form = document.getElementById('comments-list-form');
