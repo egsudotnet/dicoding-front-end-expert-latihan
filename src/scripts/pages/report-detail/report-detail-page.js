@@ -74,8 +74,9 @@ export default class ReportDetailPage {
       description: report.description,
       damageLevel: report.damageLevel,
       evidenceImages: report.evidenceImages,
-      latitudeLocation: report.location.latitude,
-      longitudeLocation: report.location.longitude,
+      location: report.location,
+      // // // latitudeLocation: report.location.latitude,
+      // // // longitudeLocation: report.location.longitude,
       reporterName: report.reporter.name,
       createdAt: report.createdAt,
     });
@@ -85,7 +86,7 @@ export default class ReportDetailPage {
 
     // Map
     await this.#presenter.showReportDetailMap();
-    
+
     if (this.#map) {
       const reportCoordinate = [report.location.latitude, report.location.longitude];
       const markerOptions = { alt: report.title };
